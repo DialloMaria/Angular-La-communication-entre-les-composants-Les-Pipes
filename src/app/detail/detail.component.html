@@ -1,1 +1,7 @@
-<p>detail works!</p>
+<div class="container mt-4" *ngIf="produit">
+    <h2>{{ produit.titre | uppercase }}</h2>
+    <p>Prix: {{ produit.prix | currency:'EUR':'symbol':'1.2-2' }}</p>
+    <img [src]="produit.imageUrl" alt="{{ produit.titre }}" height="350px" class="img-fluid" weight="150px" height="150px">
+    <button class="btn btn-secondary" (click)="produit = null">Retour à la liste</button>
+  </div>
+  

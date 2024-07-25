@@ -1,12 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Produit } from '../produit/produit.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-detail',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './detail.component.html',
-  styleUrl: './detail.component.css'
+  styleUrls: ['./detail.component.css']
 })
 export class DetailComponent {
-
+  @Input() produit: Produit | null = null;
 }
