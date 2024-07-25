@@ -1,1 +1,27 @@
-<p>produit works!</p>
+
+
+<section class="bg-color">
+    <div class="containers">
+        <div class="title">
+            <p>MARIAMA</p>
+            <h1>SEN BEST PRODUIT</h1>
+        </div>
+    </div>
+</section>
+    <div class="container mt-4">
+        <div class="row">
+          <div class="col-md-4" *ngFor="let produit of produits">
+            <div class="card mb-4">
+              <img [src]="produit.imageUrl" class="card-img-top" alt="{{ produit.titre }}" height="350px">
+              <div class="card-body">
+                <h5 class="card-title">{{ produit.titre | uppercase }}</h5>
+                <p class="card-text">Prix: {{ produit.prix | currency:'EUR':'symbol':'1.2-2' }}</p>
+                <button class="btn btn-primary">Voir les détails</button>
+              </div>
+            </div>
+          </div>
+        </div> 
+      </div>
+
+
+

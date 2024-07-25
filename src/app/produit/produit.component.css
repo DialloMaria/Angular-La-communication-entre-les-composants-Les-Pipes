@@ -1,0 +1,40 @@
+/* .card-img-top {
+    height: 150px;
+    object-fit: cover;
+  } */
+ 
+  @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+.bg-color{
+    background-color: #c7ad8c;  
+    padding: 60px 0;
+    font-family: 'roboto, sans-serif'
+}
+  .containers{
+    width: 90%;
+    padding: 0 auto;
+  }
+  .title{
+    margin-bottom: 50px;
+    text-align: center;
+    position: relative;
+  }
+  .title::before{
+    content: '';
+    width: 200px;
+    height: 3px;
+    background-color: #dbbddb;
+    opacity: -6;
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+
+  }
+  .title::before{
+    content: \f005;
+    font-family: FontAwesome;
+    color: #dbbddb;
+    width: 50PX;
+    height: 20px;
+  }
