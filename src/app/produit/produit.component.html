@@ -1,42 +1,45 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+
 <section class="bg-color">
   <div class="containers">
     <div class="title">
-      <p>MARIAMA</p>
-      <h1>SEN BEST PRODUIT</h1>
+      <p>HAIRE LOVE</p>
+      <h1>SEN BEST <span>PRODUIT</span></h1>
     </div>
-  </div>
-</section>
-
-<div class="container mt-4">
-  <div class="row">
-    <div class="col-md-4" *ngFor="let produit of produits">
-      <div class="card mb-4">
-        <img [src]="produit.imageUrl" class="card-img-top" alt="{{ produit.titre }}" height="350px">
-        <div class="card-body">
-          <h5 class="card-title">{{ produit.titre | uppercase }}</h5>
-          <p class="card-text">Prix: {{ produit.prix | currency:'EUR':'symbol':'1.2-2' }}</p>
-          <button class="btn btn-primary" (click)="afficherDetail(produit)">Voir les détails</button>
+    <div class="row">
+      <div class="col-md-3" *ngFor="let produit of produits">
+        <div class="card">
+          <div class="card-main">
+            <div class="discount">9%</div>
+            <div class="label labe-green">{{ produit.titre | uppercase }}</div>
+            <div class="image">
+              <img [src]="produit.imageUrl" alt="{{ produit.titre }}" height="350px" (click)="afficherDetail(produit)">
+            </div>
+            <div class="cart-line"></div>
+            <div class="cart-item">
+              <ul>
+                <li><a href=""><i class="fa fa-shopping-basket"></i></a></li>
+                <li><a href=""><i class="fa fa-heart"></i></a></li>
+                <li><a href=""><i class="fas fa-cog"></i></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="content">
+            <a href="">Mariama</a>
+            <div class="rating">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+            </div>
+            <p><span class="money">Prix: {{ produit.prix | currency:'EUR':'symbol':'1.2-2' }}</span> <span class="old-price">{{ produit.prix | currency:'EUR':'symbol':'1.2-2' }}</span></p>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
-
-  <div class="modal fade" id="detailModal" tabindex="-1" aria-labelledby="detailModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="detailModalLabel">{{ selectedProduit?.titre | uppercase }}</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <p>Prix: {{ selectedProduit?.prix | currency:'EUR':'symbol':'1.2-2' }}</p>
-                <img [src]="selectedProduit?.imageUrl" alt="{{ selectedProduit?.titre }}" class="img-fluid" style="max-height: 300px;">
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-  <app-detail *ngIf="selectedProduit" [produit]="selectedProduit"></app-detail></div>
+  <app-detail *ngIf="selectedProduit" [produit]="selectedProduit"></app-detail>
+</section>
